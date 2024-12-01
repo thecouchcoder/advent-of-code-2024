@@ -1,0 +1,3 @@
+# Day 1
+- Counter is a specialized class for counting objects.  I was able to use to this to simplify the summation of of the list.  With counter, if you try to access a missing key it returns 0 instead - this can simplify error handling and eliminates the need for initalizations.
+- Generator expressions are similar to list comprehensions, but use the syntax `(expression for item in iterable [if condition])`.  They evaluate the expression lazily which isn't necessary here, but it simplifies the looping.

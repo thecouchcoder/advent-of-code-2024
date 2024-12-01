@@ -1,28 +1,18 @@
 import sys
+from collections import Counter
 
 
 def calculate_total_distance(list1: list[int], list2: list[int]) -> int:
     list1.sort()
     list2.sort()
 
-    result = 0
-    for i, j in zip(list1, list2):
-        result += abs(i - j)
+    result = sum(abs(i - j) for i, j in zip(list1, list2))
     return result
 
 
 def calculate_similarity(list1: list[int], list2: list[int]) -> int:
-    d: dict[int, int] = dict()
-    for i in list2:
-        if i in d:
-            d[i] = d[i] + 1
-        else:
-            d[i] = 1
-
-    result = 0
-    for i in list1:
-        if i in d:
-            result += i * d[i]
+    count = Counter(list2)
+    result = sum(i * count[i] for i in list1)
     return result
 
 
