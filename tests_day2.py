@@ -54,13 +54,22 @@ def test_can_fix_last_element():
 def test_can_change_direction():
     assert analyze_report([29, 30, 28, 27, 26]) is True
 
-# def test_failing_test_case():
-#     assert analyze_report([32, 32, 33, 36, 38, 40]) is True
-#
-# def test_failing_test_case_2():
-#     assert analyze_report([44, 47, 48, 49, 48]) is True
-#
-# def test_correctly_dampens_direction():
-#     assert analyze_report([9,8,10,11,12,13]) is True
-#
 
+# random test cases
+def test_evil_edge_case():
+    assert analyze_report([9,8,10,11,12,13]) is True
+
+def test_failing_test_case():
+    assert analyze_report([32, 32, 33, 36, 38, 40]) is True
+
+def test_failing_test_case_2():
+    assert analyze_report([44, 47, 48, 49, 48]) is True
+
+def test_correctly_dampens_direction():
+    assert analyze_report([9, 8, 10, 11, 12, 13]) is True
+
+def test_fails_duplicates():
+    assert analyze_report([1,1,1,1,1]) is False
+def test_reddit_edge_case():
+    count = read_reports("./input/day2_reddit_edgecase.txt")
+    assert count is 15
