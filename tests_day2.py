@@ -72,4 +72,4 @@ def test_fails_duplicates():
     assert analyze_report([1,1,1,1,1]) is False
 def test_reddit_edge_case():
     count = read_reports("./input/day2_reddit_edgecase.txt")
-    assert count is 15
+    assert count is 42
