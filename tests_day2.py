@@ -1,32 +1,32 @@
-from day2 import analyze_report, read_reports, validate, Direction
+from day2 import analyze_report, read_reports
 
 
-def test_given_diff_greater_than_3_when_validate():
-    result = validate(10, 4, Direction.UP)
-    assert result is False
-    result = validate(4, 10, Direction.UP)
-    assert result is False
-
-def test_given_diff_is_equal_when_validate():
-    result = validate(1,1, Direction.UP)
-    assert result is False
-
-def test_given_direction_change_when_validate():
-    result = validate(6,7, Direction.DOWN)
-    assert result is False
-
-    result = validate(7,6, Direction.UP)
-    assert result is False
-
-def test_given_valid_when_validate():
-    result = validate(7,6, Direction.DOWN)
-    assert result is True
-    result = validate(6,7, Direction.UP)
-    assert result is True
-    result = validate(7,4, Direction.DOWN)
-    assert result is True
-    result = validate(4,7, Direction.UP)
-    assert result is True
+# def test_given_diff_greater_than_3_when_validate():
+#     result = validate(10, 4, Direction.UP)
+#     assert result is False
+#     result = validate(4, 10, Direction.UP)
+#     assert result is False
+#
+# def test_given_diff_is_equal_when_validate():
+#     result = validate(1,1, Direction.UP)
+#     assert result is False
+#
+# def test_given_direction_change_when_validate():
+#     result = validate(6,7, Direction.DOWN)
+#     assert result is False
+#
+#     result = validate(7,6, Direction.UP)
+#     assert result is False
+#
+# def test_given_valid_when_validate():
+#     result = validate(7,6, Direction.DOWN)
+#     assert result is True
+#     result = validate(6,7, Direction.UP)
+#     assert result is True
+#     result = validate(7,4, Direction.DOWN)
+#     assert result is True
+#     result = validate(4,7, Direction.UP)
+#     assert result is True
 
 def test_sample():
     count = read_reports("./input/day2_sample.txt")
